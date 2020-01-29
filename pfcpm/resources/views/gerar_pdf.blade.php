@@ -38,7 +38,7 @@
     <div style='position: absolute; top: 200px; text-align: center'>
         <p >Eu, {$permuta->nome}, Mat.:{$permuta->matricula} solicito a V.Sª permuta do serviço </p>
         <p >para o qual estou devidamente escalado no {$permuta->local} no dia {$dia_do_servico} das {$permuta->hora_inicial} às {$permuta->hora_final}</p>
-        <p >como o, $permuta->escalado, Mat.:{$permuta->escaladoMatricula} que se encontra escalado no        {$permuta->escaladoLocal}</p>
+        <p >com o, $permuta->escalado, Mat.:{$permuta->escaladoMatricula} que se encontra escalado no        {$permuta->escaladoLocal}</p>
         <p>no dia {$escaladoDia_do_servico}, das {$permuta->escaladoHora_inicial} às {$permuta->escaladoHora_final}, tendo em vista {$permuta->virtude}</p>
         <p><b>Declaro que a referida permuta está em conformidade com o preceituado no Art. 2º § 2º, Portaria N° 067 - CG/11.</b></p>
         <p>Feira de Santana, ____/____/_____</p>
@@ -84,7 +84,7 @@
     <div style='position: absolute; top: 200px; text-align: center'>
         <p >Eu, {$permuta->nome}, Mat.:{$permuta->matricula} solicito a V.Sª permuta do serviço </p>
         <p >para o qual estou devidamente escalado no {$permuta->local} no dia {$dia_do_servico} das {$permuta->hora_inicial} às {$permuta->hora_final}</p>
-        <p >como o, $permuta->escalado, Mat.:{$permuta->escaladoMatricula} que se encontra escalado no        {$permuta->escaladoLocal}</p>
+        <p >com o, $permuta->escalado, Mat.:{$permuta->escaladoMatricula} que se encontra escalado no        {$permuta->escaladoLocal}</p>
         <p>no dia {$escaladoDia_do_servico}, das {$permuta->escaladoHora_inicial} às {$permuta->escaladoHora_final}, tendo em vista {$permuta->virtude}</p>
         <p><b>Declaro que a referida permuta está em conformidade com o preceituado no Art. 2º § 2º, Portaria N° 067 - CG/11.</b></p>
         <p>Feira de Santana, ____/____/_____</p>

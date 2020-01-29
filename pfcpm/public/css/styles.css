@@ -141,6 +141,16 @@ input#escalado{
     background-size: 50px;
 }
 
+.dispensa{
+    position: relative;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    top: -150px;
+    font-size: 12pt;
+    word-wrap: break-word;
+}
+
 
 /*Tela suspeito*/
 

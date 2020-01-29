@@ -6,6 +6,7 @@ use App\User;
 use App\Patente;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PolicialController extends Controller
 {
@@ -39,7 +40,7 @@ class PolicialController extends Controller
      */
     public function store(Request $request)
     {
-        \DB::table('users')->insert([
+        DB::table('users')->insert([
             'nome'              => $request->nome,
             'matricula'         => $request->matricula,
             'foto'              => $request->foto,

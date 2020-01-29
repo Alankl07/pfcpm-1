@@ -38,21 +38,38 @@ Route::group(['middleware'=>['auth']], function()
     Route::resource('inicial', 'Auth\LoginController');
     Route::resource('permutas', 'PermutarController');
     Route::resource('crimes', 'CrimeController');
-    Route::get('permuta', 'PermutarController@indexer')->name('index');
+
+    //ROTA TELA INICIAL
+
     Route::get('home', 'HomeController@home')->name('home');
-    Route::get('excluirpermuta/{id}', 'PermutarController@deletar')->name('deletar');
-    Route::get('/registrar_crime/{suspeito}', 'CrimeController@registrar')->name('registrar');
+
+    //ROTA SUSPEITO
+
     Route::get('suspeito/{id}', 'SuspeitoController@Listacrimes')->name('crimes');
+    Route::get('/registrar_crime/{suspeito}', 'CrimeController@registrar')->name('registrar');
+
+    //ROTA PERMUTA
+    Route::get('permuta', 'PermutarController@indexer')->name('index');
+    Route::get('excluirpermuta/{id}', 'PermutarController@deletar')->name('deletar');
     Route::get('confirma/{id}', 'PermutarController@atualizarStatus')->name('atualizarStatus');
     Route::get('confirmaSPO/{id}', 'PermutarController@SPO')->name('spo');
     Route::get('SPOregeitada/{id}', 'PermutarController@nao')->name('nao');
     Route::get('CMDregeitada/{id}', 'PermutarController@naoCMD')->name('naoCMD');
     Route::get('imprimirPermuta/{permuta}', 'PermutarController@imprimir')->name('imprimir');
     Route::get('aceitar/{id}', 'PermutarController@aceitar')->name('aceitar');
-    Route::get('SPOrefazer/{id}', 'PermutarController@refazer')->name('refazer');
+    Route::get('refazer/{id}', 'PermutarController@refazer')->name('refazer');
     Route::get('confirmaCMD/{id}', 'PermutarController@CMD')->name('cmd');
     Route::get('teste', 'PermutarController@teste')->name('teste');
     Route::get('Atualizarpermuta/{id}, PermutarController@refazerPermuta')->name('refazerPermuta');
+
+    //ROTA DISPENSA
+
+    Route::get('confirmaSPO/{id}', 'DispensaController@SPO')->name('spoDispensa');
+    Route::get('SPOregeitada/{id}', 'DispensaController@nao')->name('naoDispensa');
+    Route::get('CMDregeitada/{id}', 'DispensaController@naoCMD')->name('naoCMDDispensa');
+    Route::get('imprimirDispensa/{dispensa}', 'DispensaController@imprimir')->name('imprimirDispensa');
+    Route::get('refazer/{id}', 'DispensaController@refazer')->name('refazerDispensa');
+    Route::get('confirmaCMD/{id}', 'DispensaController@CMD')->name('cmdDispensa');
     
     //Route::get('abono_sub/{id}', 'AbonoController')->name('sub');
 });

@@ -6,8 +6,9 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
@@ -63,7 +64,7 @@ class RegisterController extends Controller
             ->withInput($request->all());
         }
 
-        \DB::table('users')->insert([
+        DB::table('users')->insert([
             'nome'              => $request->nome,
             'matricula'         => $request->matricula,
             'foto'              => $request->foto,
@@ -80,7 +81,7 @@ class RegisterController extends Controller
             'password'          => bcrypt($request->senha),
         ]);
 
-        return redirect()->route('inicio.create');
+        return redirect()->route('home');
         
     }
 
@@ -94,7 +95,7 @@ class RegisterController extends Controller
             ->withInput($request->all());
         }
 
-        \DB::table('users')->insert([
+        DB::table('users')->insert([
             'nome'              => $request->nome,
             'matricula'         => $request->matricula,
             'foto'              => $request->foto,

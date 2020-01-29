@@ -17,6 +17,7 @@ class CreateDispensasTable extends Migration
             $table->bigIncrements('id');
             $table->string('Solicitante');
             $table->string('Matricula');
+            $table->string('Pelotao');
             $table->string('escalado');
             $table->string('dia_do_servico');
             $table->string('hora_inicial');
