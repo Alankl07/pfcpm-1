@@ -56,6 +56,10 @@ class DispensaController extends Controller
             $dispensa->hora_final = $request->input("as");
             $dispensa->virtude = $request->input("virtude");
             $dispensa->Status = "Aguardando Confirmação";
+            $dispensa->assinaturaSPO = "";
+            $dispensa->dataSPO = "";
+            $dispensa->assinaturaCMD = "";
+            $dispensa->optCMD = "";
             $dispensa->save();
             return redirect()->route('dispensa.index');
         }
@@ -105,6 +109,10 @@ class DispensaController extends Controller
             $dispensa->hora_final = $request->input("as");
             $dispensa->virtude = $request->input("virtude");
             $dispensa->Status = "Aguardando Confirmação";
+            $dispensa->assinaturaSPO = "";
+            $dispensa->dataSPO = "";
+            $dispensa->assinaturaCMD = "";
+            $dispensa->optCMD = "";
             $dispensa->save();
             return redirect()->route('dispensa.index');
         }
@@ -130,7 +138,8 @@ class DispensaController extends Controller
      */
     public function destroy(Dispensa $dispensa)
     {
-        //
+        $dispensa->delete();
+        return redirect()->route('home');
     }
 
     public function Validator($data)
@@ -188,11 +197,16 @@ class DispensaController extends Controller
     public function naoCMD($id)
     {
         DB::table('dispensas')->where('id', $id)->update([
-            'Status'    => 'Nâo Autorizada',
+            'Status'    => 'Indeferimento',
             'optCMD'       => 'Indeferimento',
             'assinaturaCMD' => Auth::user()->nome
         ]);
 
         return redirect()->route('home');
+    }
+
+    public function imprimir(Dispensa $dispensa)
+    {
+        return view('dispensa/gerar_pdf_dispensa', compact('dispensa'));
     }
 }

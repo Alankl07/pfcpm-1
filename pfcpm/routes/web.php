@@ -55,7 +55,7 @@ Route::group(['middleware'=>['auth']], function()
     Route::get('confirmaSPO/{id}', 'PermutarController@SPO')->name('spo');
     Route::get('SPOregeitada/{id}', 'PermutarController@nao')->name('nao');
     Route::get('CMDregeitada/{id}', 'PermutarController@naoCMD')->name('naoCMD');
-    Route::get('imprimirPermuta/{permuta}', 'PermutarController@imprimir')->name('imprimir');
+    Route::get('imprimirPermuta/{permuta}', 'PermutarController@imprimir')->name('imprimirPermuta');
     Route::get('aceitar/{id}', 'PermutarController@aceitar')->name('aceitar');
     Route::get('refazer/{id}', 'PermutarController@refazer')->name('refazer');
     Route::get('confirmaCMD/{id}', 'PermutarController@CMD')->name('cmd');
@@ -70,6 +70,7 @@ Route::group(['middleware'=>['auth']], function()
     Route::get('imprimirDispensa/{dispensa}', 'DispensaController@imprimir')->name('imprimirDispensa');
     Route::get('refazer/{id}', 'DispensaController@refazer')->name('refazerDispensa');
     Route::get('confirmaCMD/{id}', 'DispensaController@CMD')->name('cmdDispensa');
+    Route::get('imprimirDispensa/{dispensa}', 'DispensaController@imprimir')->name('imprimirDispensa');
     
     //Route::get('abono_sub/{id}', 'AbonoController')->name('sub');
 });

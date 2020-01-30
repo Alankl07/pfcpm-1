@@ -9,6 +9,9 @@
             </h4>
         </li>
         @foreach($dispensa as $disp)
+        @if($disp == "")
+            <h1>Nenhuma Dispensa solicitada</h1>
+        @endif
         @if(Auth::user()->matricula == $disp->Matricula || Auth::user()->setor == 'SPO' &&
         Auth::user()->chefedeSetor == 'Sim' || Auth::user()->setor == 'PELOTÃO' && 
         Auth::user()->chefedeSetor == 'Sim' )
@@ -25,8 +28,6 @@
                 </h4>
             </li>
         </a>
-        @else
-            <h1>Nenhuma Dispensa solicitada</h1>
         @endif
 
 

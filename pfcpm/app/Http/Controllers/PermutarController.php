@@ -317,6 +317,6 @@ class PermutarController extends Controller
 
     public function imprimir(Permutar $permuta)
     {
-        return view('gerar_pdf', compact('permuta'));
+        return view('permuta/gerar_pdf_Permuta', compact('permuta'));
     }
 }

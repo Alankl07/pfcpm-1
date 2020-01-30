@@ -39,6 +39,6 @@
                 <p style="position: relative; left:200px; top:-147px">__________________________________</p>
                 <p style="position: relative; top: -148px; left:200px">Substituto</p>            
             </div>
-            <a href="{{route('imprimir', $permuta)}}" class="btn btn" style="position: relative; top: -250px; height: 40px; width: 150px; color: white; background-color: blue;">IMPRIMIR</a>
+            <a href="{{route('imprimirPermuta', $permuta)}}" class="btn btn" style="position: relative; top: -250px; height: 40px; width: 150px; color: white; background-color: blue;">IMPRIMIR</a>
         </div>
 @endsection('body')
