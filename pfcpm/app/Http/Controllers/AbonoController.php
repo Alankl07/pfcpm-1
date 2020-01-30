@@ -31,14 +31,6 @@ class AbonoController extends Controller
     }
     public function store(Request $request)
     {
-        $validacao = $this->Validator($request->all());
-
-        if($validacao->fails())
-        {
-            return redirect()->back()
-            ->withErrors($validacao->errors())
-            ->withInput($request->all());
-        }else{
             $abonos = new Abono();
             $abonos->num_mat = $request->input("mat");
             $abonos->nome = $request->input("nome");
@@ -52,7 +44,6 @@ class AbonoController extends Controller
             $abonos->status = "Aguardando Confirmação";
             $abonos->save();
             return redirect()->route('abono.index');
-        }
     }
 
     /**
